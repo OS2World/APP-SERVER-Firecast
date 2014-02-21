@@ -1,0 +1,18 @@
+All scripts tested only in OS/2-environment.
+
+clean.cmd	Clean up: remove all *.obj, *.lib, *.err etc...
+make.cmd	Make OS/2 or windows binaries
+		(into bin\%platform%\firecast.exe)
+store.cmd	Make package of sources (into firecast-sources-NNNNNNNN.zip)
+		!! need PKZIP.EXE
+
+bin\firecast.cmd	Make firecast's package (OS/2) for distribution
+			!! need PKZIP.EXE
+                        (into bin\OS2\firecast-NNNNNNNN.zip)
+
+bin\firecast.iss	Script for Inno Setup
+                        (make installer for windows into bin\NT\Output\setup.exe)
+	I use Inno Setup 5.1.6 under eComStation (OS/2) via Odin.
+
+Digi, 2008
+e-mail: digi@os2.snc.ru

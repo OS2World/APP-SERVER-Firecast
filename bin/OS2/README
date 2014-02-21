@@ -1,0 +1,21 @@
+Firecast.
+--------
+
+This is a media server that can be used to create an network streaming
+radio station.
+
+
+1. Start firecast.exe
+
+2. Start the web-browser and follow this link:
+
+	http://localhost:8000/
+
+3. Make necessary changes in a configuration through a web-interface.
+
+	Default administrator's login: admin
+                             password: password
+
+
+Digi, 2007
+Last builds: http://digi.os2.snc.ru/eng/firecast

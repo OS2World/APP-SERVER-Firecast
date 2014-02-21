@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Глава 2. Подготовка к работе</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Firecast"><link rel="up" href="index.html" title="Firecast"><link rel="prev" href="ch01s04.html" title="Легальность"><link rel="next" href="ch02s02.html" title="Установка"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Глава 2. Подготовка к работе</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s04.html">Пред.</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch02s02.html">След.</a></td></tr></table><hr></div><div class="chapter" lang="ru"><div class="titlepage"><div><div><h2 class="title"><a name="id607798"></a>Глава 2. Подготовка к работе</h2></div></div></div><div class="toc"><p><b>Содержание</b></p><dl><dt><span class="section"><a href="ch02.html#id607803">Как это работает</a></span></dt><dt><span class="section"><a href="ch02s02.html">Установка</a></span></dt></dl></div><div class="section" lang="ru"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id607803"></a>Как это работает</h2></div></div></div><p>
+        Применяется классическая 3х-компонентная схема сетевого
+        вещания: источники (кодировщики) создают потоки, например,
+        на основе статических файлов, либо аналогового аудиосигнала
+        путём упаковки в нужный формат и передают на сервер Firecast.
+        Сервер, в свою очередь, передаёт копии потоков клиентам
+        (слушателям).
+      </p><p>
+        В качестве источника может использоваться как встраеваемый
+        модуль к программе-плееру
+        (<a class="ulink" href="http://www.shoutcast.com/download/broadcast.phtml" target="_top">SHOUTcast DSP Plug-in</a>
+        для Winamp в Windows или
+        <a class="ulink" href="http://digi.os2.snc.ru/eng/firecast" target="_top">fires-PM123 filter plug-in</a>
+        для
+        <a class="ulink" href="http://glass.ptv.ru/software/english/pm123.html" target="_top">PM123</a>
+        в
+        <a class="ulink" href="http://www.ecomstation.ru/" target="_top">eComStation</a>
+        и OS/2) так и отдельные программы
+        (<a class="ulink" href="http://www.icecast.org/ices.php" target="_top">ices0</a>,
+        <a class="ulink" href="http://www.icecast.org/ices.php" target="_top">ices2</a>,
+        shout и т.п.).
+      </p><p>
+        Через один сервер Firecast могут транслироваться потоки от
+        множества источников. Каждому источнику назначается так
+        называемая точка монтирования. Точки монтирования
+        указываются либо самими источниками (если они работают по
+        протоколу http, такие как Ices0, Ices2, fires-PM123 filter
+        plug-in), либо назначаются сервером на основе конфигурации
+        (для таких как shout, SHOUTcast DSP Plug-in, в этом случае
+        имя точки монтирования привязывается к номеру порта). Точки
+        монтирования отражаются в адресах потоков, например, для
+        имён точек монтирования <code class="filename">mystream</code> и
+        <code class="filename">radio.ogg</code> соответственно:
+        <code class="filename">http://localhost:8000/mystream</code> ,
+        <code class="filename">http://localhost:8000/radio.ogg</code> .
+        Для потоков в формате Ogg Vorbis документация Icecast2
+        рекомендует выбирать имена точек монтирования,
+        заканчивающиеся на ".ogg"
+      </p><p>
+        Принимать поток с сервера для воспроизведения можно одним
+        из многих плееров, умеющих работать с потоками, такими как
+        Windows Media Player, Winamp для Windows; XMMS для FreeBSD
+        и Linux;
+        <a class="ulink" href="http://glass.ptv.ru/software/english/pm123.html" target="_top">PM123</a>
+        ,
+        <a class="ulink" href="http://dink.org/z/" target="_top">Z!</a> для
+        <a class="ulink" href="http://www.ecomstation.ru/" target="_top">eComStation</a> и OS/2.
+      </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s04.html">Пред.</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch02s02.html">След.</a></td></tr><tr><td width="40%" align="left" valign="top">Легальность </td><td width="20%" align="center"><a accesskey="h" href="index.html">Начало</a></td><td width="40%" align="right" valign="top"> Установка</td></tr></table></div></body></html>

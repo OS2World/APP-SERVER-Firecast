@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=http://localhost:8000/
+[DOC_mainFrameset_menu]
+BASEURL=http://localhost:8000/menu.html
+ORIGURL=menu.html
+[DOC_mainFrameset_main]
+BASEURL=http://admin:password@localhost:8000/admin/templates
+ORIGURL=main.html
+[InternetShortcut]
+URL=http://admin:password@localhost:8000/
+Modified=C0F09E5AB28DC801B0

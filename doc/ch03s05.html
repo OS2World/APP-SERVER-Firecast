@@ -1,0 +1,35 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Ретрансляция</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Firecast"><link rel="up" href="ch03.html" title="Глава 3. Настройка"><link rel="prev" href="ch03s04.html" title="Шаблоны источников"><link rel="next" href="ch03s06.html" title="Файл конфигурации"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Ретрансляция</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03s04.html">Пред.</a> </td><th width="60%" align="center">Глава 3. Настройка</th><td width="20%" align="right"> <a accesskey="n" href="ch03s06.html">След.</a></td></tr></table><hr></div><div class="section" lang="ru"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id610657"></a>Ретрансляция</h2></div></div></div><p>
+        Ретрансляция позволяет серверу firecast передавать своим клиентам
+        потоки с других различных серверов.
+        В этом случае сервер firecast выступает в роли клиента для других
+        серверов, считывает с них заданные потоки и передаёт копии этих
+        потоков своим клиентам.
+        Данная функция может быть очень полезна для организации передачи
+        данных через различные шлюзы и экономии трафика:
+        сервер в локальной сети может принимать по <span class="emphasis"><em>одному</em></span>
+        заданному потоку из внешней сети и тиражировать их клинтам своей сети.
+      </p><p>
+        Направления (ретранслируемые потоки) описываются в разделе
+        <span class="command"><strong>Relays</strong></span> web-интерфейса Firecast. Может быть задано
+        любое количество направлений, каждое из которых описывается всего
+        тремя параметрами:
+        точка монтирования (<code class="option">Mount point</code>), адрес потока
+        (<code class="option">Source location</code>) -
+        прямая ссылка или ссылка на m3u-описатель и переключателем
+        "постоянного потока" (<code class="option">Nailed-up</code>). Последний параметр
+        указывает, что поток будет считываться непрерывно. Если ретранслируемый
+        поток не является "постоянным", то сервер будет устанавливать
+        соединение с сервером-источником потока (т.е. сервером с которого
+        ретранслируется поток) только в том случае,
+        если появляются локальные клиенты и разрывать соединение при отключении
+        последнего клиента. Т.е. не "постоянные потоки" заметно
+        экономят трафик, если значительную часть времени клиенты отсутствуют,
+        но требуют некоторого времени (как правило, всего несколько секунд) на
+        установку связи с сервером-источником потока при подключении первого
+        клиента.
+      </p><p>
+        Для точек монтирования, создаваемых при ретрансляции должны быть
+        описаны <a class="xref" href="ch03s04.html" title="Шаблоны источников">шаблоны</a> так же, как и для точек
+        монтирования источников.
+        Поля шаблонов "password" в данном случае не используются.
+      </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03s04.html">Пред.</a> </td><td width="20%" align="center"><a accesskey="u" href="ch03.html">Уровень выше</a></td><td width="40%" align="right"> <a accesskey="n" href="ch03s06.html">След.</a></td></tr><tr><td width="40%" align="left" valign="top">Шаблоны источников </td><td width="20%" align="center"><a accesskey="h" href="index.html">Начало</a></td><td width="40%" align="right" valign="top"> Файл конфигурации</td></tr></table></div></body></html>

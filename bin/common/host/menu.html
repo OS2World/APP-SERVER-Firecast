@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="autor" content="Vasilkin Andrey" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <title>Firecast</title>
+  <style type="text/css">
+  body {
+    padding: 0;
+    margin: 0;
+    background: url(img/menu-bg.gif) #C6DEFE right top repeat-y;
+    font-family: sans-serif,helvetica;
+    font-size: 8pt;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul ul {
+    margin-left: 0.4em;
+  }
+  li {
+    list-style-type: none;
+    color: #1A2632;
+    margin-top: 0.3em;
+    margin-left: 0.5em;
+  }
+  li a {
+    color: #021632;
+    text-decoration: none;
+  }
+  a:hover	{ text-decoration: underline; }
+  </style>
+
+  <script type="text/javascript">
+<!--
+  function Sel(el,doc)
+  {
+    top.window.frames[1].location.href=doc;
+    return false;
+  }
+// -->
+  </script>
+</head>
+
+<body>
+
+<ul style="
+  background: url(img/menu-top.gif) transparent right top repeat-x;
+  padding-top: 70px;
+">
+  <li><a href="/" onclick="return Sel(this,'main.html');">Home</a></li>
+  <li><a href="/" onclick="return Sel(this,'/admin/sources-info');">Status</a></li>
+  <li><a href="/" onclick="return Sel(this,'/admin/control.html');">Control</a>
+    <ul>
+      <li><a href="/" onclick="return Sel(this,'/admin/admin');">Administrator</a></li>
+      <li><a href="/" onclick="return Sel(this,'/admin/general');">General</a></li>
+      <li><a href="/" onclick="return Sel(this,'/admin/hosts');">Web-hosts</a></li>
+      <li><a href="/" onclick="return Sel(this,'/admin/templates');">Templates</a></li>
+      <li><a href="/" onclick="return Sel(this,'/admin/relays');">Relays</a></li>
+      <li style="margin-top: 0.7em;"><a href="/" onclick="return Sel(this,'/admin/sources');">Sources</a></li>
+      <li><a href="/" onclick="return Sel(this,'/admin/log');">Logging</a></li>
+    </ul>
+  </li>
+</ul>
+
+<a href="/listen.pls" style="margin-top: 2em; margin-left: 25px;">
+<img src="/img/listen.png"
+  style="size: 41px 43px; border: 0; margin-top: 2em;"
+  onmouseover="this.style.backgroundColor='#DEEBB5';"
+  onmouseout="this.style.backgroundColor='';">
+</a>
+
+</body></html>

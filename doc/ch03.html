@@ -1,0 +1,29 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Глава 3. Настройка</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Firecast"><link rel="up" href="index.html" title="Firecast"><link rel="prev" href="ch02s02.html" title="Установка"><link rel="next" href="ch03s02.html" title="Порты"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Глава 3. Настройка</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02s02.html">Пред.</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch03s02.html">След.</a></td></tr></table><hr></div><div class="chapter" lang="ru"><div class="titlepage"><div><div><h2 class="title"><a name="id608546"></a>Глава 3. Настройка</h2></div></div></div><div class="toc"><p><b>Содержание</b></p><dl><dt><span class="section"><a href="ch03.html#id608552">Доступ администратора</a></span></dt><dd><dl><dt><span class="section"><a href="ch03.html#ACLs">Сприски доступа</a></span></dt></dl></dd><dt><span class="section"><a href="ch03s02.html">Порты</a></span></dt><dt><span class="section"><a href="ch03s03.html">Хосты (виртуальные web-серверы)</a></span></dt><dt><span class="section"><a href="ch03s04.html">Шаблоны источников</a></span></dt><dt><span class="section"><a href="ch03s05.html">Ретрансляция</a></span></dt><dt><span class="section"><a href="ch03s06.html">Файл конфигурации</a></span></dt></dl></div><div class="section" lang="ru"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id608552"></a>Доступ администратора</h2></div></div></div><p>
+        Перед Вами web-интерфейс управления Firecast. Первым делом,
+        необходимо принять меры безопасности и сменить имя/пароль
+        администратора; для этого перейдите в раздел
+        <span class="command"><strong>Administrator</strong></span>
+        и на запрос браузера введите имя пользователя "admin" и
+        пароль "password" (без кавычек). Кроме имени/пароля
+        администратора здесь же можно задать списки доступа для
+        администратора, уровень детализации журнала событий и
+        количество последних записей, хранимых в журнале событий.
+      </p><div class="section" lang="ru"><div class="titlepage"><div><div><h3 class="title"><a name="ACLs"></a>Сприски доступа</h3></div></div></div><p>
+          Эти списки используются в нескольких разделах конфигурации
+          и представляют из себя правила доступа клиентов на
+          основании их ip-адресов. Каждое правило разрешает
+          (<em class="replaceable"><code>allow</code></em>) или запрещает
+          (<em class="replaceable"><code>deny</code></em>) доступ с указанных адресов.
+          Адреса задаются в виде адрес/маска или адрес/n, где n -
+          количество бит маски, например:
+          </p><div class="variablelist"><dl><dt><span class="term">deny 192.168.1.10/255.255.255.255</span></dt><dd>запретить доступ с адреса 192.168.1.10</dd><dt><span class="term">allow 192.168.1.0/255.255.255.0</span></dt><dd>разрешить доступ со всех остальных адресов сети 192.168.1</dd><dt><span class="term">deny 0/0</span></dt><dd>запретить всем остальным</dd></dl></div><p>
+        </p><p>
+          Правила просматриваются с начала списка. Когда тестируемый
+          адрес совпадает с указанным в правиле (является частью
+          указанной сети), принимается решение - разрешить соединение
+          <em class="replaceable"><code>allow</code></em> или запретить
+          <em class="replaceable"><code>deny</code></em>.
+          Если список правил пуст, то любой адрес считается разрешённым.
+          Если список не пуст и тестируемый адрес не соответствует ни
+          одному правилу, он считается запрещённым.
+        </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02s02.html">Пред.</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch03s02.html">След.</a></td></tr><tr><td width="40%" align="left" valign="top">Установка </td><td width="20%" align="center"><a accesskey="h" href="index.html">Начало</a></td><td width="40%" align="right" valign="top"> Порты</td></tr></table></div></body></html>

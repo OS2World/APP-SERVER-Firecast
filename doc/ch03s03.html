@@ -1,0 +1,84 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Хосты (виртуальные web-серверы)</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Firecast"><link rel="up" href="ch03.html" title="Глава 3. Настройка"><link rel="prev" href="ch03s02.html" title="Порты"><link rel="next" href="ch03s04.html" title="Шаблоны источников"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Хосты (виртуальные web-серверы)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03s02.html">Пред.</a> </td><th width="60%" align="center">Глава 3. Настройка</th><td width="20%" align="right"> <a accesskey="n" href="ch03s04.html">След.</a></td></tr></table><hr></div><div class="section" lang="ru"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id608772"></a>Хосты (виртуальные web-серверы)</h2></div></div></div><p>
+        Если сервер имеет несколько псевдонимов в доменной системе
+        имён (DNS) и/или несколько ip-адресов, т.е. может
+        откликаться на разные адреса, Вы можете организовать
+        несколько виртуальных хостов. Смысл разделения на
+        виртуальные хосты в том, что при обращении к одному серверу
+        с использованием разных адресов выдаётся разная информация.
+        Например, у вашего сервера в локальной сети в DNS прописан
+        основной адрес (запись A) mainserv и псевдоним (запись
+        CNAME) radioserv. Второй адрес может быть использован для
+        создания виртуального хоста, т.е. Firecast при обращении к
+        нему по адресу  radioserv будет выдавать не свой
+        web-интерфейс, а документы из указанного локального пути
+        (например, web-страницу сетевой радиостанции).
+      </p><p>
+        Кроме статических файлов, хранящихся на сервере и доступных
+        через http-протокол, имеется ряд динамических данных,
+        которые формируются во время работы и имеют адреса
+        http://любое_имя_сервера/ресурс, это:
+        </p><div class="itemizedlist"><ul type="disc"><li>
+            точки монтирования
+          </li><li>
+            m3u-файлы точек монтирования, вида
+            http://.../точка_монтирования.m3u
+          </li><li>
+            ресурсы, использующиеся источниками для обновления мета-информации:
+            <div class="itemizedlist"><ul type="circle"><li>
+                /admin/metadata
+              </li><li>
+                /admin.cgi
+              </li></ul></div></li><li>
+            ресурсы администрирования:
+            <div class="itemizedlist"><ul type="circle"><li>
+                /admin/source
+              </li><li>
+                /admin/sources
+              </li><li>
+                /admin/source-info
+              </li><li>
+                /admin/sources-info
+              </li><li>
+                /admin/templates
+              </li><li>
+                /admin/hosts
+              </li><li>
+                /admin/general
+              </li><li>
+                /admin/admin
+              </li><li>
+                /admin/log
+              </li></ul></div></li><li>
+            сводный плей-лист сервера /listen.pls
+          </li></ul></div><p>
+        Надо отметить, что все эти динамические ресурсы будут доступны
+        по любому из имён виртуальных серверов, файлы с совпадающими
+        именами будут недоступны.
+      </p><p>
+        Управляются виртуальные хосты на странице
+        <span class="command"><strong>Web-hosts</strong></span> конфигуратора. Здесь для каждого
+        создаваемого хоста задаются:
+        </p><div class="itemizedlist"><ul type="disc"><li>
+            локальный путь к документам хоста;
+          </li><li>
+            имена виртуального хоста (на которые он откликается,
+            ip-адреса и/или символические имена);
+          </li><li>
+            имена индексных файлов (обычно
+            <code class="filename">index.html</code>), т.е.
+            дописываемые к адресам без указанного конечного файла.
+            Например, если в параметрах виртуального сервера указан
+            индексный файл
+            <code class="filename">index.html</code>, то адрес
+            <span class="command"><strong>http://myhost:8000/</strong></span> будет эквивалентен
+            <span class="command"><strong>http://myhost:8000/index.html</strong></span>;
+          </li><li><a class="xref" href="ch03.html#ACLs" title="Сприски доступа">списки доступа</a> к хостам.
+          </li></ul></div><p>
+      </p><p>
+        Виртуальный хост без заданного имени "откликается" на любое
+        имя. При поступлении запроса и поиске соответствующего
+        виртуального хоста список просматривается в том порядке,
+        какой отображается в конфигураторе. Это значит, что хост
+        без указанного имени имеет смысл иметь только один, и только
+        вконце списка.
+      </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03s02.html">Пред.</a> </td><td width="20%" align="center"><a accesskey="u" href="ch03.html">Уровень выше</a></td><td width="40%" align="right"> <a accesskey="n" href="ch03s04.html">След.</a></td></tr><tr><td width="40%" align="left" valign="top">Порты </td><td width="20%" align="center"><a accesskey="h" href="index.html">Начало</a></td><td width="40%" align="right" valign="top"> Шаблоны источников</td></tr></table></div></body></html>
